@@ -20,13 +20,13 @@ class SearchDriverWorker(ctx: Context, params: WorkerParameters) : CoroutineWork
         applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
     override suspend fun doWork(): Result {
-        // 1. Buat notif sebagai foreground
+        // 1. Buat notif as foreground act
         setForeground(createForegroundInfo())
 
-        // 2. mencari selama 3 detik
+        // 2. anggap aja nyari driver 3s
         delay(3000L)
 
-        // 3. Trigger worker berikutnya
+        // 3. succes biar weorker selajnutnya jalan
         return Result.success()
     }
 
