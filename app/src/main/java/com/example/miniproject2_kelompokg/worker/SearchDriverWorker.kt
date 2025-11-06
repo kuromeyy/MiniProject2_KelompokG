@@ -9,7 +9,7 @@ import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
-import com.example.miniproject2_kelompokg.R // Pastikan import R benar
+import com.example.miniproject2_kelompokg.R
 import kotlinx.coroutines.delay
 
 class SearchDriverWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, params) {
@@ -35,7 +35,7 @@ class SearchDriverWorker(ctx: Context, params: WorkerParameters) : CoroutineWork
         val notification = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
             .setContentTitle("Mencari Driver")
             .setContentText("Sedang mencari driver terdekat untuk kamu...")
-            .setSmallIcon(R.drawable.ic_launcher_foreground) // Ganti ikon
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setOngoing(true)
             .build()
 
@@ -43,7 +43,7 @@ class SearchDriverWorker(ctx: Context, params: WorkerParameters) : CoroutineWork
             ForegroundInfo(
                 NOTIF_ID,
                 notification,
-                ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC // <-- TAMBAHAN KRUSIAL
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
             )
         } else {
             ForegroundInfo(NOTIF_ID, notification)

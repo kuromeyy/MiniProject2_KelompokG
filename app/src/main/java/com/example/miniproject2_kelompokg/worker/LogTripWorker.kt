@@ -17,7 +17,7 @@ import kotlinx.coroutines.delay
 class LogTripWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, params) {
 
     private val CHANNEL_ID = "LogTripChannel"
-    private val NOTIF_ID = 3 // ID Notifikasi BARU (agar tidak bentrok)
+    private val NOTIF_ID = 3 // id biar ga bentrok
     private val notificationManager =
         applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
